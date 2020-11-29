@@ -32,8 +32,7 @@ body {
   transition: transform .3s;
   transition: transform .3s, -webkit-transform .3s;
   -webkit-transform: translate3d(0, -1px, 0);
-  transform: translate3d(0, -1px, 0);
-  position: relative; }
+  transform: translate3d(0, -1px, 0); }
   .container .item:hover {
     -webkit-transform: translate3d(0, -10px, 0);
     transform: translate3d(0, -10px, 0); }

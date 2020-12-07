@@ -15,37 +15,45 @@ body {
   background: -o-linear-gradient(45deg, #f37646, #f3e946) center center no-repeat;
   background: linear-gradient(45deg, #f37646, #f3e946) center center no-repeat; }
 
-.container .title {
-  font-size: 25px;
-  color: #fff;
-  font-weight: bold;
-  margin-bottom: 25px; }
-
-.container .item {
-  margin: 40px 10px;
-  background-color: #fff;
-  -webkit-box-shadow: 0 15px 35px #3232321a, 0 5px 15px #0000001a;
-  box-shadow: 0 15px 35px #3232321a, 0 5px 15px #0000001a;
-  -webkit-transition: -webkit-transform .3s;
-  transition: -webkit-transform .3s;
-  -o-transition: transform .3s;
-  transition: transform .3s;
-  transition: transform .3s, -webkit-transform .3s;
-  -webkit-transform: translate3d(0, -1px, 0);
-  transform: translate3d(0, -1px, 0); }
-  .container .item:hover {
-    -webkit-transform: translate3d(0, -10px, 0);
-    transform: translate3d(0, -10px, 0); }
-  .container .item .item__image img {
-    display: block;
-    width: 100%;
-    height: auto; }
-  .container .item .item__body {
-    padding: 25px; }
-    .container .item .item__body .item__title {
-      font-size: 24px;
-      margin-bottom: 5px;
-      font-weight: bold;
-      color: #232323; }
-    .container .item .item__body .item__description {
-      color: #585858; }
+.container {
+  /** Carousel **/ }
+  .container .title {
+    font-size: 25px;
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 25px; }
+  .container .carousel {
+    position: relative;
+    overflow: hidden; }
+    .container .carousel .carousel__container .carousel__item {
+      display: -webkit-inline-box;
+      display: -ms-inline-flexbox;
+      display: inline-flex; }
+  .container .item {
+    margin: 40px 10px;
+    background-color: #fff;
+    -webkit-box-shadow: 0 15px 35px #3232321a, 0 5px 15px #0000001a;
+    box-shadow: 0 15px 35px #3232321a, 0 5px 15px #0000001a;
+    -webkit-transition: -webkit-transform .3s;
+    transition: -webkit-transform .3s;
+    -o-transition: transform .3s;
+    transition: transform .3s;
+    transition: transform .3s, -webkit-transform .3s;
+    -webkit-transform: translate3d(0, -1px, 0);
+    transform: translate3d(0, -1px, 0); }
+    .container .item:hover {
+      -webkit-transform: translate3d(0, -10px, 0);
+      transform: translate3d(0, -10px, 0); }
+    .container .item .item__image img {
+      display: block;
+      width: 100%;
+      height: auto; }
+    .container .item .item__body {
+      padding: 25px; }
+      .container .item .item__body .item__title {
+        font-size: 24px;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #232323; }
+      .container .item .item__body .item__description {
+        color: #585858; }

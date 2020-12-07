@@ -12,25 +12,51 @@ class Carousel {
       slidesToScroll: 1,
       slidesVisible: 1
     }, options)
-    this.children = [].slice.call(element.children)
+    let children = [].slice.call(element.children)
 
     let root = this.createDivWithClass('carousel')
-    let container = this.createDivWithClass('carousel__container')
-    root.appendChild(container)
+    this.container = this.createDivWithClass('carousel__container')
+
+    root.appendChild(this.container)
     this.element.appendChild(root)
     
-    this.children.forEach(child => {
+    this.items = children.map(child => {
 
       let item = this.createDivWithClass('carousel__item');
-      item.appendChild(child)
-      container.appendChild(item)
-    });
+
+      item.appendChild(child);
+
+      this.container.appendChild(item);
+
+      return item
+    })
+
+    this.setStyle()
+    this.createNavigation()
   }
 
   /**
-   * 
+   *Applique les bonnes dimensions aux éléments du caroussel
+   *
+   * @memberof Carousel
+   */
+  setStyle() {
+    let ratio = this.items.length / this.options.slidesVisible;
+    this.container.style.width  = (ratio * 100)+"%";
+
+    this.items.forEach( item => {
+      item.style.width = ((100 /  this.options.slidesVisible) / ratio) + "%";
+    });
+  }
+
+  createNavigation() {
+
+  }
+
+  /**
+   * fonction de création de div en paramètre la classe
    * @param {string} className
-   * @returns {HTMLElement}S
+   * @returns {HTMLElement}
    */
   createDivWithClass(className) {
     let div = document.createElement('div');

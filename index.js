@@ -12,13 +12,15 @@ class Carousel {
       slidesToScroll: 1,
       slidesVisible: 1
     }, options)
-    let children = [].slice.call(element.children)
+    let children = [].slice.call(element.children);
 
-    let root = this.createDivWithClass('carousel')
-    this.container = this.createDivWithClass('carousel__container')
+    this.currentItem = 0; // première item(slide)
 
-    root.appendChild(this.container)
-    this.element.appendChild(root)
+    this.root = this.createDivWithClass('carousel');
+    this.container = this.createDivWithClass('carousel__container');
+
+    this.root.appendChild(this.container)
+    this.element.appendChild(this.root)
     
     this.items = children.map(child => {
 
@@ -28,7 +30,7 @@ class Carousel {
 
       this.container.appendChild(item);
 
-      return item
+      return item;
     })
 
     this.setStyle()
@@ -36,7 +38,7 @@ class Carousel {
   }
 
   /**
-   *Applique les bonnes dimensions aux éléments du caroussel
+   *Applique les bonnes dimensions aux éléments du carousel
    *
    * @memberof Carousel
    */
@@ -49,7 +51,39 @@ class Carousel {
     });
   }
 
-  createNavigation() {
+  
+/**
+ *Ajout d'élément pour faire defiler le carousel
+ *
+ * @memberof Carousel
+ */
+createNavigation() {
+    let nextButton = this.createDivWithClass('carousel__next')
+    let prevButton = this.createDivWithClass('carousel__prev')
+
+    this.root.appendChild(nextButton)
+    this.root.appendChild(prevButton)
+
+    nextButton.addEventListener('click', this.next.bind(this))
+    prevButton.addEventListener('click', this.prev.bind(this))
+  }
+
+  next() {
+
+  }
+
+  prev() {
+
+  }
+
+  
+/**
+ *
+ *Déplace le carousel vers l'élément ciblé
+ * @param {number} index
+ * @memberof Carousel
+ */
+goToItem(index) {
 
   }
 

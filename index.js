@@ -69,11 +69,11 @@ createNavigation() {
   }
 
   next() {
-
+    this.goToItem(this.currentItem + this.options.slidesToScroll)
   }
 
   prev() {
-
+    this.goToItem(this.currentItem  - this.options.slidesToScroll)
   }
 
   
@@ -84,7 +84,9 @@ createNavigation() {
  * @memberof Carousel
  */
 goToItem(index) {
-
+    let translateX = index * -100 / this.items.length;
+    this.container.style.transform = 'translate3d('+ translateX + '%, 0, 0)'
+    this.currentItem = index
   }
 
   /**

@@ -27,12 +27,14 @@ body {
 
   .carousel {
     position: relative;
-    overflow: hidden;
 
     .carousel__container {
+      overflow: hidden;
+      transition: transform .3s;
+      transform: translate3d(0, 0, 0);
 
       .carousel__item {
-        display: inline-flex;
+        float: left;
       }
     }
   }
@@ -70,5 +72,28 @@ body {
         color: #585858;
       }
     }
+  }
+
+  .carousel__next, .carousel__prev {
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 50%;
+    top: 50%;
+    margin-top: -20px;
+    right: -20px;
+    box-shadow: 0 15px 35px #3232321a, 0 5px 15px #0000001a;
+    cursor: pointer;
+    position: absolute;
+    transition: transform .3s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  .carousel__prev {
+    right: auto;
+    left: -20px;
   }
 }

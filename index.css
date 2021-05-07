@@ -23,12 +23,18 @@ body {
     font-weight: bold;
     margin-bottom: 25px; }
   .container .carousel {
-    position: relative;
-    overflow: hidden; }
-    .container .carousel .carousel__container .carousel__item {
-      display: -webkit-inline-box;
-      display: -ms-inline-flexbox;
-      display: inline-flex; }
+    position: relative; }
+    .container .carousel .carousel__container {
+      overflow: hidden;
+      -webkit-transition: -webkit-transform .3s;
+      transition: -webkit-transform .3s;
+      -o-transition: transform .3s;
+      transition: transform .3s;
+      transition: transform .3s, -webkit-transform .3s;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0); }
+      .container .carousel .carousel__container .carousel__item {
+        float: left; }
   .container .item {
     margin: 40px 10px;
     background-color: #fff;
@@ -57,3 +63,27 @@ body {
         color: #232323; }
       .container .item .item__body .item__description {
         color: #585858; }
+  .container .carousel__next, .container .carousel__prev {
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 50%;
+    top: 50%;
+    margin-top: -20px;
+    right: -20px;
+    -webkit-box-shadow: 0 15px 35px #3232321a, 0 5px 15px #0000001a;
+    box-shadow: 0 15px 35px #3232321a, 0 5px 15px #0000001a;
+    cursor: pointer;
+    position: absolute;
+    -webkit-transition: -webkit-transform .3s;
+    transition: -webkit-transform .3s;
+    -o-transition: transform .3s;
+    transition: transform .3s;
+    transition: transform .3s, -webkit-transform .3s; }
+    .container .carousel__next:hover, .container .carousel__prev:hover {
+      -webkit-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+      transform: scale(1.2); }
+  .container .carousel__prev {
+    right: auto;
+    left: -20px; }
